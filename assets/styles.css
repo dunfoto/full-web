@@ -1,0 +1,251 @@
+@import '~antd/dist/antd.css';
+@import './antd-custom.css';
+@import './custom.css';
+@import './home.css';
+@import './blog.css';
+
+
+.banner-flip{
+    -webkit-animation: bannerBg 2s infinite linear alternate;
+       -moz-animation: bannerBg 2s infinite linear alternate;
+            animation: bannerBg 2s infinite linear alternate;
+    background: -webkit-gradient(linear, left top, right top, from(#ffc700), color-stop(50%, #e91e1e), to(#6f27b0));
+    background: -webkit-linear-gradient(left, #ffc700 0%, #e91e1e 50%, #6f27b0 100%);
+    background: -moz-linear-gradient(left, #ffc700 0%, #e91e1e 50%, #6f27b0 100%);
+    background: -o-linear-gradient(left, #ffc700 0%, #e91e1e 50%, #6f27b0 100%);
+    background: linear-gradient(90deg, #ffc700 0%, #e91e1e 50%, #6f27b0 100%);
+    -webkit-background-size: 200% 100%;
+       -moz-background-size: 200% 100%;
+            background-size: 200% 100%;
+}
+
+@-webkit-keyframes bannerBg{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 100% 0;
+    }
+}
+
+@-moz-keyframes bannerBg{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 100% 0;
+    }
+}
+
+@keyframes bannerBg{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 100% 0;
+    }
+}
+
+
+.pagination-wrap{
+    width: 750px;
+    padding: 20px 20px 40px;
+    background: #fff;
+    
+    @media screen and (max-width: 800px) {
+        width: 100%;
+    }
+}
+
+//生活记录
+.life-main{
+    padding: 30px 25px;
+    background: #fff;
+
+    img{
+        max-width: 100%;
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+}
+
+.about-main{
+    padding: 10px 0;
+    margin: 20px auto;
+
+    @media screen and (max-width: 800px) {
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-top{
+        padding-bottom: 20px;
+        .desc{
+            font-size: 15px;
+            color: #666;
+            margin-top: 5px;
+        }
+    }
+
+    .about-container{
+        padding:20px 30px;
+        background: #fff;
+        border-top: 1px @border-s solid;
+
+        @media screen and (max-width: 800px) {
+            padding: 15px;
+        }
+
+        .about-desc{
+            width: 65%;
+            padding-top: 20px;
+            line-height: 24px;
+            text-align: justify;
+
+            @media screen and (max-width: 800px) {
+                width: 100%;
+            }
+        }
+        .about-side{
+            width: 30%;
+
+            @media screen and (max-width: 800px) {
+                width: 100%;
+            }
+
+            .about-pic{
+                width: 100px;
+                height: 100px;
+                -webkit-border-radius: 50%;
+                   -moz-border-radius: 50%;
+                        border-radius: 50%;
+                display: block;
+                margin: 15px auto;
+                border: 1px #efefef solid
+            }
+            .about-msg{
+                line-height: 30px;
+                padding: 10px;
+                p{
+                    background: #f6f6f6;
+                    margin: 5px 0;
+                    padding-left: 10px;
+                    -webkit-border-radius: 5px;
+                       -moz-border-radius: 5px;
+                            border-radius: 5px;
+                    text-shadow: rgba(255, 255, 255, 0.3) 0px 1px 0px;
+                }
+            }
+        }
+    }
+}
+
+//留言板
+.board-main{
+    padding: 20px 25px;
+    margin: 30px auto;
+    background: #fff;
+
+    @media screen and (max-width: 800px) {
+        padding: 12px;
+        margin: 0;
+    }
+
+    .board-container{
+        width: 65%;
+
+        @media screen and (max-width: 800px) {
+            width: 100%;
+        }
+    }
+    .board-side{
+        width: 30%;
+        padding: 20px;
+        background: #f6f6f6;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+}
+
+.board-p-avator{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    border:1px #eee solid;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+}
+
+.mark-edit-wrap{
+    padding-left: 50px;
+    position: relative;
+    .board-name{
+        margin-bottom: 10px;
+    }
+    .ant-alert-warning{
+        display: none;
+        &.board-warning{
+            display: block;
+        }
+    }
+    
+}
+
+.board-list{
+    margin-bottom: 60px;
+    .item{
+        padding-left: 50px;
+        position: relative;
+        margin-bottom: 20px;
+        .name{
+            height: 18px;
+            font-size: 14px;
+            line-height: 18px;
+            display: inline-block;
+            margin-bottom: 10px;
+            color: rgba(0,0,0,0.6);
+        }
+        .date{
+            padding-left: 8px;
+            font-style: normal;
+            cursor: auto;
+            color: #ccc;
+        }
+        .item-inner{
+            padding: 0 0 0 50px;
+            margin-top: 20px;
+            position: relative;
+            -webkit-border-radius: 2px;
+               -moz-border-radius: 2px;
+                    border-radius: 2px;
+        }
+        .inner-author{
+            padding:2px 5px;
+            background: @theme;
+            color: #fff;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+    .board-mark{
+        padding: 10px;
+        background: #f9f9f9;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        img{
+            display: block;
+            max-width: 100%;
+        }
+    }
+}
+
+.blog-loading {
+    display: block;
+    margin: 200px auto 500px;
+}
