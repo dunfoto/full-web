@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import { TitleReducer } from "./redux/title"
+import auth from "./redux/auth"
 
 export default combineReducers({
-    TitleReducer
+    auth
 })

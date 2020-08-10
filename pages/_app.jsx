@@ -4,6 +4,8 @@ import { withRouter } from 'next/router'
 import { Provider } from 'react-redux'
 import withReduxStore from '../store/with-redux-store'
 import FrontLayout from "../components/FrontLayout";
+import AdminLayout from "../components/AdminLayout";
+
 
 class MyApp extends App {
     constructor(props) {
@@ -50,9 +52,16 @@ class MyApp extends App {
         const { Component, pageProps, router, reduxStore } = this.props;
         return (
             <Provider store={reduxStore}>
-                <FrontLayout>
-                    <Component {...pageProps} />
-                </FrontLayout>
+                {router.pathname.startsWith("/admin/") ? (
+                    <AdminLayout>
+                        <Component {...pageProps} />
+                    </AdminLayout>
+                ) : (
+                        <FrontLayout>
+                            <Component {...pageProps} />
+                        </FrontLayout>
+                    )
+                }
             </Provider>
         );
     }
