@@ -22,9 +22,9 @@ class Header extends Component {
                 <meta name="Keywords" content="react，nextjs，ssr" className="next-head" />
                 <meta name="Description" content="邵天宇的个人网站，生活记录，技术博客" className="next-head" />
                 <meta name="author" content="TaPhuCo" className="next-head" />
-                <link rel="stylesheet" type="text/css" href="static/css/nprogress.css" />
-                <link rel="stylesheet" type="text/css" href="static/css/markdown.css" />
-                <link rel="stylesheet" type="text/css" href="static/css/navbar.css" />
+                <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
+                <link rel="stylesheet" type="text/css" href="/static/css/markdown.css" />
+                <link rel="stylesheet" type="text/css" href="/static/css/navbar.css" />
             </Head>
         )
     }

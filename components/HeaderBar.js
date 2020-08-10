@@ -1,4 +1,3 @@
-import Header from './Header'
 import React, { Component, Fragment } from 'react'
 import Router, { withRouter } from 'next/router'
 import NProgress from 'nprogress'
@@ -26,7 +25,6 @@ class HeaderBar extends Component {
         const { pathname } = this.props.router;
         return (
             <Fragment>
-                <Header />
                 <Navbar bg="light" expand="lg">
                     <Navbar.Brand><Link path="/" label="TaPhuCo" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

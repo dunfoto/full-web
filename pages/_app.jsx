@@ -1,11 +1,12 @@
 import '../style/index.css'
 import App from 'next/app';
+import { PersistGate } from 'redux-persist/integration/react'
 import { withRouter } from 'next/router'
 import { Provider } from 'react-redux'
-import withReduxStore from '../store/with-redux-store'
 import FrontLayout from "../components/FrontLayout";
 import AdminLayout from "../components/AdminLayout";
-
+import store from "store/store"
+import Header from 'components/Header';
 
 class MyApp extends App {
     constructor(props) {
@@ -49,23 +50,26 @@ class MyApp extends App {
 
 
     render() {
-        const { Component, pageProps, router, reduxStore } = this.props;
+        const { Component, pageProps, router } = this.props;
         return (
-            <Provider store={reduxStore}>
-                {router.pathname.startsWith("/admin/") ? (
-                    <AdminLayout>
-                        <Component {...pageProps} />
-                    </AdminLayout>
-                ) : (
-                        <FrontLayout>
+            <Provider store={store.store}>
+                <PersistGate loading={null} persistor={store.persistor}>
+                    <Header />
+                    {router.pathname.startsWith("/admin/") ? (
+                        <AdminLayout>
                             <Component {...pageProps} />
-                        </FrontLayout>
-                    )
-                }
+                        </AdminLayout>
+                    ) : (
+                            <FrontLayout>
+                                <Component {...pageProps} />
+                            </FrontLayout>
+                        )
+                    }
+                </PersistGate>
             </Provider>
         );
     }
 
 }
 
-export default withReduxStore(withRouter(MyApp))
+export default withRouter(MyApp)
